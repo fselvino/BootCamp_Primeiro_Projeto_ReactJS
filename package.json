@@ -4,5 +4,8 @@
   "main": "index.js",
   "repository": "git@github.com:fselvino/BootCamp_Primeiro_Projeto_ReactJS.git",
   "author": "fernandoselvino@gmail.com <fernandoselvino@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "react-router-dom": "^5.1.2"
+  }
 }
