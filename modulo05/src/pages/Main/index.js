@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom'
 import { FaGithubAlt, FaPlus, FaSpinner } from 'react-icons/fa';
 
 import api from '../../services/api';
@@ -12,6 +13,7 @@ class Main extends Component {
   };
   // Carregar os dados do localStorage
   componentDidMount() {
+
     const repositories = localStorage.getItem('repositories')
     if (repositories) {
       this.setState({ repositories: JSON.parse(repositories) })
@@ -55,6 +57,7 @@ class Main extends Component {
         <h1>
           <FaGithubAlt />
           Repositórios
+
         </h1>
         <Form onSubmit={this.handleSubmit}>
           <input
@@ -76,7 +79,7 @@ class Main extends Component {
           {repositories.map(repository => (
             <li key={repository.name}>
               <span>{repository.name}</span>
-              <a href="">Detalhes</a>
+              <Link to={`/repository/${encodeURIComponent(repository.name)}`}>Detalhes</Link>
             </li>
           ))}
         </List>
